@@ -1,0 +1,9 @@
+The Red will be the player and the Green will be the Enemy. The multipliers will be the color of the player plus the triads to give it a brighter look. The Gates will be a bright white. All of which will have shading of the same color. Presented in a 8-bit(ish) way.
+Forground will be outlined with a black.
+
+The Background is still unclear because I lack the knowledge of what I would like to do. (What i would like to do is a white and diffenent shades of light red and make it look like blood rushing throught the vein.
+
+it will be a 2D, 2.5D
+
+flat colors and semi complex designs.
+
