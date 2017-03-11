@@ -2,20 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GateController : MonoBehaviour
-{
-    public int points = 5;
+public class MultiplierController : MonoBehaviour {
+
+    public int multi = 1;
+
     void OnTriggerEnter2D(Collider2D c)
     {
         if (c.gameObject.tag == "Player")
         {
-            Debug.Log("Entered Gate");
             gameObject.SetActive(false);
-            GameManager.Points(0,points);
-            ExplosionSpawner.SpawnExplosion(transform.position);
-
+            GameManager.Points(multi,0);
         }
-
     }
-
 }

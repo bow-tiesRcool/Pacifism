@@ -33,7 +33,6 @@ public class EnemySpawner : MonoBehaviour {
     EnemyController SpawnEnemy()
     {
         EnemyController enemy = null;
-
         for (int i = 0; i < enemyPool.Count; i++)
         {
             EnemyController e = enemyPool[i];
@@ -50,6 +49,7 @@ public class EnemySpawner : MonoBehaviour {
             enemyPool.Add(enemy);
         }
 
+        enemy.gameObject.SetActive(true);
         return enemy;
     }
 }

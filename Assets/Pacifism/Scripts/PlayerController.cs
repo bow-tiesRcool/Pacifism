@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     public static PlayerController player;
-    public float speed = 3;
+    
 
     Rigidbody2D _body;
     Renderer renderer;
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour {
     {
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
-        body.velocity = new Vector2(x, y) * speed;
+        body.velocity = new Vector2(x, y) * GameManager.instance.playerSpeed;
 
         if (body.velocity.sqrMagnitude > 0.1f)
         {

@@ -6,8 +6,6 @@ public class GateSpawner : MonoBehaviour {
 
     public GateController gatePrefab;
     List<GateController> gatePool = new List<GateController>();
-    public int maxGates = 20;
-    public int spawnInterval = 5;
 
     void Start()
     {
@@ -21,16 +19,17 @@ public class GateSpawner : MonoBehaviour {
 
     IEnumerator SpawnCoroutine()
     {
-        for(int amount = 0; amount < maxGates; amount++)
+        for(int amount = 0; amount < GameManager.instance.maxGates; amount++)
         {
             for (int i = 0; i < 1; i++)
             {
                 GateController g = SpawnGate();
-                Vector3 screenPosition = Camera.main.ScreenToWorldPoint(new Vector3(Random.Range(0, Screen.width), Random.Range(0, Screen.height), Camera.main.farClipPlane / 2));
-                g.transform.position = transform.position + screenPosition;
+                Vector3 worldPosition = Camera.main.ViewportToWorldPoint(new Vector3(Random.value, Random.value, 0));
+                worldPosition.z = 0;
+                g.transform.position = worldPosition;
              }
             Debug.Log("Instantiation " + amount);
-            yield return new WaitForSeconds(spawnInterval);
+            yield return new WaitForSeconds(GameManager.instance.spawnInterval);
         }
     }
 
@@ -53,6 +52,8 @@ public class GateSpawner : MonoBehaviour {
             gate = Instantiate(gatePrefab) as GateController;
             gatePool.Add(gate);
         }
+
+        gate.gameObject.SetActive(true);
 
         return gate;
     }

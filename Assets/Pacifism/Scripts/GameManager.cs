@@ -17,6 +17,12 @@ public class GameManager : MonoBehaviour {
 
     public int score = 0;
     public int highScore;
+    public int multiScore = 0;
+    public float lookAhead = 1;
+    public float enemySpeed = 3;
+    public float playerSpeed = 3;
+    public int maxGates = 20;
+    public int spawnInterval = 5;
 
     void Awake()
     {
@@ -43,6 +49,14 @@ public class GameManager : MonoBehaviour {
     private void Update()
     {
         HighScore();
+    }
+
+    public static void Points(int multi, int points)
+    {
+        instance.multiScore += multi;
+        int score = points * instance.multiScore;
+        instance.score += score;
+        instance.scoreUI.text = "Score: " + instance.score;
     }
 
     public static void HighScore()

@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: fa423aeca99ddc147baca2811541ba0d
-timeCreated: 1489109602
+guid: 855d9ff5b762b694090e4613be29a98d
+timeCreated: 1489117103
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: PacifisimSprites_0
-    21300002: PacifisimSprites_1
-    21300004: PacifisimSprites_2
-    21300006: PacifisimSprites_3
-    21300008: PacifisimSprites_4
-    21300010: PacifisimSprites_5
+    21300000: Pacifisim_0
+    21300002: Pacifisim_1
+    21300004: Pacifisim_2
+    21300006: Pacifisim_3
+    21300008: Pacifisim_4
+    21300010: Pacifisim_5
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -92,78 +92,78 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PacifisimSprites_0
+      name: Pacifisim_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 51
-        width: 15
-        height: 10
+        x: 48
+        y: 816
+        width: 240
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: PacifisimSprites_1
+      name: Pacifisim_1
       rect:
         serializedVersion: 2
-        x: 4
-        y: 32
-        width: 15
-        height: 12
+        x: 64
+        y: 512
+        width: 240
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: PacifisimSprites_2
+      name: Pacifisim_2
       rect:
         serializedVersion: 2
-        x: 22
-        y: 34
-        width: 17
-        height: 13
+        x: 352
+        y: 544
+        width: 272
+        height: 208
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: PacifisimSprites_3
+      name: Pacifisim_3
       rect:
         serializedVersion: 2
-        x: 45
-        y: 33
-        width: 16
-        height: 14
+        x: 720
+        y: 528
+        width: 256
+        height: 224
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: PacifisimSprites_4
+      name: Pacifisim_4
       rect:
         serializedVersion: 2
-        x: 3
-        y: 11
-        width: 17
-        height: 12
+        x: 48
+        y: 176
+        width: 272
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: PacifisimSprites_5
+      name: Pacifisim_5
       rect:
         serializedVersion: 2
-        x: 31
-        y: 6
-        width: 10
-        height: 22
+        x: 496
+        y: 96
+        width: 160
+        height: 352
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

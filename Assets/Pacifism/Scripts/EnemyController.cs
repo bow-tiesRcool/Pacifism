@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour {
 
-    public float lookAhead = 1;
-    public float speed = 3;
     Rigidbody2D body;
     Renderer renderer;
 
@@ -17,9 +15,9 @@ public class EnemyController : MonoBehaviour {
 
     void Update()
     {
-        Vector2 target = (Vector2)PlayerController.player.transform.position + PlayerController.player.body.velocity * lookAhead;
+        Vector2 target = (Vector2)PlayerController.player.transform.position + PlayerController.player.body.velocity * GameManager.instance.lookAhead;
         Vector2 heading = (target - (Vector2)transform.position).normalized;
-        body.velocity = heading * speed;
+        body.velocity = heading * GameManager.instance.enemySpeed;
 
         if (body.velocity.sqrMagnitude > 0.1f)
         {
@@ -41,4 +39,13 @@ public class EnemyController : MonoBehaviour {
         u.y = Mathf.Clamp01(u.y);
         transform.position = Camera.main.ViewportToWorldPoint(u) - Vector3.down * xOffset;
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Explosion")
+        {
+            gameObject.SetActive(false);
+            MultiplierSpawner.SpawnMultiplier(transform.position);
+        }
+    } 
 }
