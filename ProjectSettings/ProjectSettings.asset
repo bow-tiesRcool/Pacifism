@@ -453,6 +453,7 @@ PlayerSettings:
   XboxOnePersistentLocalStorageSize: 0
   vrEditorSettings: {}
   cloudServicesEnabled:
+    Collab: 1
     UNet: 1
   cloudProjectId: a3ab2393-474d-4704-a916-ed701a8433f6
   projectName: Pacifism

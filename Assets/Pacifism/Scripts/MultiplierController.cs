@@ -11,7 +11,7 @@ public class MultiplierController : MonoBehaviour {
         if (c.gameObject.tag == "Player")
         {
             gameObject.SetActive(false);
-            GameManager.Points(multi,0);
+            GameManager.Points(multi,2);
         }
     }
 }

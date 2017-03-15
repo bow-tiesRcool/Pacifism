@@ -19,7 +19,7 @@ public class GateSpawner : MonoBehaviour {
 
     IEnumerator SpawnCoroutine()
     {
-        for(int amount = 0; amount < GameManager.instance.maxGates; amount++)
+        while (enabled)
         {
             for (int i = 0; i < 1; i++)
             {
@@ -27,8 +27,8 @@ public class GateSpawner : MonoBehaviour {
                 Vector3 worldPosition = Camera.main.ViewportToWorldPoint(new Vector3(Random.value, Random.value, 0));
                 worldPosition.z = 0;
                 g.transform.position = worldPosition;
-             }
-            Debug.Log("Instantiation " + amount);
+            }
+            Debug.Log("Instantiation");
             yield return new WaitForSeconds(GameManager.instance.spawnInterval);
         }
     }

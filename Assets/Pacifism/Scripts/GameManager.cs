@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour {
     public Text scoreUI;
     public Text highScoreUI;
     public Text gameOverUI;
+    public Text MultiplierUI;
 
     public int score = 0;
     public int highScore;
@@ -21,7 +22,6 @@ public class GameManager : MonoBehaviour {
     public float lookAhead = 1;
     public float enemySpeed = 3;
     public float playerSpeed = 3;
-    public int maxGates = 20;
     public int spawnInterval = 5;
 
     void Awake()
@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour {
 
     public static void Points(int multi, int points)
     {
+        instance.StartCoroutine("MultiplierUITimer");
         instance.multiScore += multi;
         int score = points * instance.multiScore;
         instance.score += score;
@@ -87,6 +88,21 @@ public class GameManager : MonoBehaviour {
             PlayerPrefs.SetInt("highScore", newHighScore);
             PlayerPrefs.Save();
         }
+    }
+
+    public static void GameOver()
+    {
+        instance.gameOverUI.text = "Game Over";
+        instance.gameOverUI.gameObject.SetActive(true);
+        HighScoreSaver();
+    }
+
+    IEnumerator MultiplierUITimer()
+    {
+        instance.MultiplierUI.text = ("Multiplier X" + instance.multiScore);
+        instance.MultiplierUI.gameObject.SetActive(true);
+        yield return new WaitForSeconds(3);
+        instance.MultiplierUI.gameObject.SetActive(false);
     }
 }
 

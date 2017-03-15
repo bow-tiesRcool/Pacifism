@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour {
 
     public EnemyController enemyPrefab;
+    public int amount = 3;
     List<EnemyController> enemyPool = new List<EnemyController>();
 
     void Start()
@@ -21,11 +22,12 @@ public class EnemySpawner : MonoBehaviour {
     {
         while (enabled)
         {
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < amount; i++)
             {
                 EnemyController e = SpawnEnemy();
                 e.transform.position = transform.position + (Vector3)Random.insideUnitCircle;
             }
+            amount++;
             yield return new WaitForSeconds(3);
         }
     }

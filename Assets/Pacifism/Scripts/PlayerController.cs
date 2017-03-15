@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     public static PlayerController player;
-    
+    public ParticleSystem Death;
 
     Rigidbody2D _body;
     Renderer renderer;
@@ -59,5 +59,15 @@ public class PlayerController : MonoBehaviour {
         Vector3 u = Camera.main.WorldToViewportPoint(transform.position + Vector3.down * xOffset);
         u.y = Mathf.Clamp01(u.y);
         transform.position = Camera.main.ViewportToWorldPoint(u) - Vector3.down * xOffset;
+    }
+
+    private void OnTriggerEnter2D(Collider2D c)
+    {
+        if (c.gameObject.tag == "Enemy")
+        {
+            gameObject.SetActive(false);
+            Death.Play();
+            GameManager.GameOver();
+        }
     }
 }
