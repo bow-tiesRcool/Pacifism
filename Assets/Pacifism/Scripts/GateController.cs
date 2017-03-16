@@ -11,7 +11,7 @@ public class GateController : MonoBehaviour
         {
             Debug.Log("Entered Gate");
             gameObject.SetActive(false);
-            GameManager.Points(0,points);
+            GameManager.Points(1,points);
             ExplosionSpawner.SpawnExplosion(transform.position);
 
         }

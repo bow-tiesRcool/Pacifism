@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour {
         if (c.gameObject.tag == "Enemy")
         {
             gameObject.SetActive(false);
-            Death.Play();
+            //Death.Play();
             GameManager.GameOver();
         }
     }

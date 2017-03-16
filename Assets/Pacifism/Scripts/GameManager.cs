@@ -55,8 +55,8 @@ public class GameManager : MonoBehaviour {
     {
         instance.StartCoroutine("MultiplierUITimer");
         instance.multiScore += multi;
-        int score = points * instance.multiScore;
-        instance.score += score;
+        int Score = points * instance.multiScore;
+        instance.score += Score;
         instance.scoreUI.text = "Score: " + instance.score;
     }
 

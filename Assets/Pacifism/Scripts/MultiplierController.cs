@@ -5,6 +5,7 @@ using UnityEngine;
 public class MultiplierController : MonoBehaviour {
 
     public int multi = 1;
+    public static MultiplierController instance;
 
     void OnTriggerEnter2D(Collider2D c)
     {

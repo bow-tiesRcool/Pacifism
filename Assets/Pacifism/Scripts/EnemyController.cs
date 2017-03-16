@@ -6,6 +6,7 @@ public class EnemyController : MonoBehaviour {
 
     Rigidbody2D body;
     Renderer renderer;
+    public int points = 5;
 
     void Start()
     {
@@ -45,6 +46,7 @@ public class EnemyController : MonoBehaviour {
         if (other.gameObject.tag == "Explosion")
         {
             gameObject.SetActive(false);
+            GameManager.Points(1, points);
             MultiplierSpawner.SpawnMultiplier(transform.position);
         }
     } 
